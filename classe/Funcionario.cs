@@ -7,8 +7,7 @@ public class Funcionario : Pessoa
 	private string? Cargo {get;set;}
 	private DateTime DataAdmissao{get;set;}
 	
-	public Funcionario(int id,string cargo,DateTime dataAdmissao,string nome,DateTime dataNascimento
-	+):base (nome,dataNascimento)
+	public Funcionario(int id,string cargo,DateTime dataAdmissao,string nome,DateTime dataNascimento):base (nome,dataNascimento)
 	{
 			if(string.IsNullOrEmpty(cargo))
 				throw new ArgumentException("Cargo não pode ser nulo ou vazio",nameof (cargo));
@@ -22,7 +21,7 @@ public class Funcionario : Pessoa
 		}
     public override void ExibirInformacoes()
     {
-        Console.WriteLine("Base exibiu")
+        Console.WriteLine($"Data de Admissão{DataAdmissao}");
     }
 	
 }
